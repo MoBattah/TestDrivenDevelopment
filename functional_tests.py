@@ -15,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
         #Edith sees the browser title and header mention To-Do lists
         self.assertIn('To-Do', self.browser.title)
         header = self.browser.find_element_by_tag_name('h1')
-        self.assertIn('To-Do', header.text)
+        self.assertIn('Start a new to-do list', header.text)
         
         
         
