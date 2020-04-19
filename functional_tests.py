@@ -40,6 +40,12 @@ class NewVisitorTest(unittest.TestCase):
             [row.text for row in rows]
         )
 
+        # Edith wonders whethers the site will remember her list.
+        # Then she sees the site has generated a unique URL for her.
+        # There is some explanatory text to that effect.
+
+        self.fail('Finish the test.')
+
 
 if __name__ == '__main__':
     unittest.main()
