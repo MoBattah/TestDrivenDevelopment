@@ -12,8 +12,19 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_starting_a_new_todo_list(self):
         
+        #Edith goes to the homepage
         self.browser.get('http://localhost:8000')
+
+        #Edith sees the browser title and header mention To-Do lists
         self.assertIn('To-Do', self.browser.title)
+        header = self.browser.find_element_by_tag_name('h1')
+        self.assertIn('To-Do', header.text)
+        
+        
+        
+        # She is invited to enter a to-do item straight away
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertEqual
 
 if __name__ == '__main__':
     unittest.main()
