@@ -6,12 +6,8 @@ class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-
-    def tearDown(self):
-        self.browser.quit()
-
-    def test_starting_a_new_todo_list(self):
         
+    def test_starting_a_new_todo_list(self):
         #Edith goes to the homepage
         self.browser.get('http://localhost:8000')
 
@@ -44,7 +40,12 @@ class NewVisitorTest(unittest.TestCase):
         # Then she sees the site has generated a unique URL for her.
         # There is some explanatory text to that effect.
 
+        print("Hello")
         self.fail('Finish the test.')
+
+    def tearDown(self):
+        self.browser.quit()
+
 
 
 if __name__ == '__main__':
