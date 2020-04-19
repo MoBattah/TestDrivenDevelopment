@@ -1,12 +1,13 @@
 import unittest
-from selenium import webdriver, Keys
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 
 class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        
+
     def test_starting_a_new_todo_list(self):
         #Edith goes to the homepage
         self.browser.get('http://localhost:8000')
