@@ -27,6 +27,8 @@ class NewVisitorTest(unittest.TestCase):
         self.assertEqual(inputbox.get_attribute('placeholder'), 'Enter a to-do item')
 
         #She types "Buy peacock feathers" into the inputbox
+        inputbox.send_keys("Buy peacock feathers")
+        
 
 if __name__ == '__main__':
     unittest.main()
