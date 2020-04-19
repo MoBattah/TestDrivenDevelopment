@@ -14,3 +14,8 @@ class HomePageTest(TestCase):
         self.assertTrue(response.content.startswith(b'<html>'))
         self.assertIn(b'<title>To-Do Lists</title>', response.content)
         self.assertTrue(response.content.endswith(b'</html>'))
+
+        with open('lists/templates/home.html') as f:
+            expected_content = f.read()
+
+        self.assertEqual(response.content.decode(), expected_content)
