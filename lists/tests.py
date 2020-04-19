@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.http import HttpRequest
-
+from django.template.loader import render_to_string
 from lists.views import home_page
 
 
@@ -10,7 +10,8 @@ class HomePageTest(TestCase):
         request = HttpRequest()
 
         response = home_page(request)
-        
+
+        expected_content = render_to_string('home.html')
         with open('lists/templates/home.html') as f:
             expected_content = f.read()
 

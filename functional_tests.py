@@ -31,6 +31,8 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys(Keys.ENTER)
 
         table = self.browser.find_element_by_id('id_list_table')
+        import time
+        time.sleep(10)
         rows = table.find_elements_by_tag_name('tr')
         self.assertIn(
             "1: Buy peacock feathers",
