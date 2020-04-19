@@ -12,7 +12,4 @@ class HomePageTest(TestCase):
         response = home_page(request)
 
         expected_content = render_to_string('home.html')
-        with open('lists/templates/home.html') as f:
-            expected_content = f.read()
-
         self.assertEqual(response.content.decode(), expected_content)
