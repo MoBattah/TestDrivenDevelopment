@@ -28,7 +28,11 @@ class NewVisitorTest(unittest.TestCase):
 
         #She types "Buy peacock feathers" into the inputbox
         inputbox.send_keys("Buy peacock feathers")
-        
+
+        # When Edith hits enter, the page updates and now the page lists
+        # '1: Buy peacock feathers as an item in a to-do list
+        inputbox.send_keys(Keys.ENTER)
+
 
 if __name__ == '__main__':
     unittest.main()
