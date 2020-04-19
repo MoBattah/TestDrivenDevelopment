@@ -1,5 +1,5 @@
 import unittest
-from selenium import webdriver
+from selenium import webdriver, Keys
 
 
 class NewVisitorTest(unittest.TestCase):
