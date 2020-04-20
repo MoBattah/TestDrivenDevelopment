@@ -11,12 +11,14 @@ class HomePageTest(TestCase):
         response = home_page(request)
         self.assertIn("to-do item", response.content.decode())
 
-    def test_home_page_can_remember_post_requests(self):
+    def test_home_page_can_save_post_requests_to_database(self):
         request = HttpRequest()
         request.method = 'POST'
         request.POST['item_text'] = 'A new item'
-
         response = home_page(request)
+
+        item_from_db = Item.objects.all()[0]
+        self.assertEqual(item_from_db.text, 'A new item')
 
         self.assertIn('A new item', response.content.decode())
 
@@ -43,3 +45,5 @@ class ItemModelTest(TestCase):
 
         second_item_from_db = Item.objects.all()[1]
         self.assertEqual(second_item_from_db.text, "Item the second")
+
+
