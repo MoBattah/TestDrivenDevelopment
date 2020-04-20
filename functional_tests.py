@@ -11,7 +11,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_starting_a_new_todo_list(self):
         #Edith goes to the homepage
         self.browser.get('http://localhost:8000')
-        self.browser.implicitly_wait(3)
+        self.browser.implicitly_wait(8)
 
 
 
@@ -44,7 +44,6 @@ class NewVisitorTest(unittest.TestCase):
         # Then she sees the site has generated a unique URL for her.
         # There is some explanatory text to that effect.
 
-        print("Hello")
         self.fail('Finish the test.')
 
     def tearDown(self):
