@@ -19,3 +19,27 @@ class HomePageTest(TestCase):
         response = home_page(request)
 
         self.assertIn('A new item', response.content.decode())
+
+
+
+from lists.models import Item
+
+class ItemModelTest(TestCase):
+
+    def test_saving_and_retrieving_items_to_the_database(self):
+
+        # Testing creation and saving of two new items
+
+        first_item = Item()
+        first_item.text = "Item the first"
+        first_item.save()
+
+        second_item = Item()
+        second_item.text = "Item the second"
+        second_item.save()
+
+        first_item_from_db = Item.objects.all()[0]
+        self.assertEqual(first_item_from_db.text, "Item the first")
+
+        second_item_from_db = Item.objects.all()[1]
+        self.assertEqual(second_item_from_db.text, "Item the second")
