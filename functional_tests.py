@@ -11,6 +11,9 @@ class NewVisitorTest(unittest.TestCase):
     def test_starting_a_new_todo_list(self):
         #Edith goes to the homepage
         self.browser.get('http://localhost:8000')
+        self.browser.implicitly_wait(3)
+
+
 
         #Edith sees the browser title and header mention To-Do lists
         self.assertIn('To-Do', self.browser.title)
@@ -31,8 +34,6 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys(Keys.ENTER)
 
         table = self.browser.find_element_by_id('id_list_table')
-        import time
-        time.sleep(10)
         rows = table.find_elements_by_tag_name('tr')
         self.assertIn(
             "1: Buy peacock feathers",
